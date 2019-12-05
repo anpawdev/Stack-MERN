@@ -3,7 +3,7 @@ import { API_URL } from '../config';
 
 /* SELECTORS */
 export const getPosts = ({ posts }) => posts;
-export const postsAmount = ({ postsAmount }) => postsAmount;
+export const postsAmount = ({ posts }) => posts.length;
 
 /* INITIAL STATE */
 const initialState = [];
