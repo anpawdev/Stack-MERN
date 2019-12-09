@@ -2,6 +2,7 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import PostsList from '../PostsList/PostsList';
 import Spinner from '../../common/Spinner/Spinner';
+import Alert from '../../common/Alert/Alert';
 
 class Posts extends React.Component {
 
@@ -11,12 +12,15 @@ class Posts extends React.Component {
   }
 
   render() {
-    const { posts, request } = this.props;
+    const { posts } = this.props;
+    const { pending, error, success} = this.props.request;
 
     return (
       <div>
-        {request.pending && <Spinner />}
-        <PostsList posts={posts} />
+        {!pending && success && (posts.length > 0) && <PostsList posts={posts}/>}
+        {(pending || !success) && <Spinner />}
+        {!pending && error && <Alert variant="error">{error}</Alert>}
+        {!pending && success && (posts.length === 0) && <Alert variant="info">No posts</Alert>}
       </div>
     );
   }
@@ -32,6 +36,7 @@ Posts.propTypes = {
     })
   ),
   loadPosts: PropTypes.func.isRequired,
+  request: PropTypes.object.isRequired,
 };
 
 export default Posts;
