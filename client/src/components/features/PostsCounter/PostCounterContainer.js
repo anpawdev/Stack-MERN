@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import { postsAmount } from '../../../redux/postsRedux';
+import { getPostsCount } from '../../../redux/postsRedux';
 import PostsCounter from './PostsCounter';
 
 const mapStateToProps = state => ({
-  postsAmount: postsAmount(state),
+  postsCount: getPostsCount(state),
 })
 
 export default connect(mapStateToProps)(PostsCounter);
