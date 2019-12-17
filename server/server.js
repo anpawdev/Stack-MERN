@@ -4,6 +4,7 @@ const config = require('./config');
 const mongoose = require('mongoose');
 const loadTestData = require('./testData');
 const helmet = require('helmet');
+const sanitize = require('mongo-sanitize');
 
 const app = express();
 
@@ -13,6 +14,7 @@ const postRoutes = require('./routes/post.routes');
 app.use(cors());
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
+app.use(express.json(sanitize()));
 app.use('/api', postRoutes);
 app.use(helmet());
 

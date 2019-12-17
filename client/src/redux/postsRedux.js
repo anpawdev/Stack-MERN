@@ -131,7 +131,7 @@ export const loadPostsByPageRequest = (page) => {
     try {
 
       const postsPerPage = 10;
-
+      
       const startAt = (page - 1) * postsPerPage;
       const limit = postsPerPage;
 

@@ -9,8 +9,8 @@ class Posts extends React.Component {
 
   state = {
     initialPage: 1,
-    postsPerPage: 10,
-    pagination: true
+    postsPerPage: this.props.postsPerPage || 10,
+    pagination: this.props.pagination  === false ? false : true,
   }
 
   componentDidMount() {
@@ -28,11 +28,12 @@ class Posts extends React.Component {
     const { posts, pages } = this.props;
     const { pending, error, success} = this.props.request;
     const { loadPostsPage } = this;
+    const { pagination } = this.state;
 
     return (
       <div>
         {!pending && success && (posts.length > 0) && <PostsList posts={posts}/>}
-        <Pagination pages={pages} onPageChange={loadPostsPage}/>
+        <Pagination pages={pages} onPageChange={loadPostsPage} visible={pagination}/>
         {(pending || !success) && <Spinner />}
         {!pending && error && <Alert variant="error">{error}</Alert>}
         {!pending && success && (posts.length === 0) && <Alert variant="info">No posts</Alert>}
@@ -53,6 +54,7 @@ Posts.propTypes = {
   ),
   loadPostsByPage: PropTypes.func.isRequired,
   request: PropTypes.object.isRequired,
+  pagination: PropTypes.bool,
 };
 
 export default Posts;
