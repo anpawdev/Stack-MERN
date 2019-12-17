@@ -1,5 +1,8 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
+import { FacebookProvider, Comments, ShareButton } from 'react-facebook';
+import { withRouter } from 'react-router-dom';
+import { BASE_URL } from '../../../config';
 
 import PageTitle from '../../common/PageTitle/PageTitle';
 import HtmlBox from '../../common/HtmlBox/HtmlBox';
@@ -17,6 +20,7 @@ class SinglePost extends React.Component {
     const { singlePost } = this.props;
     const { pending, error, success} = this.props.request;
     const { author } = this.props.singlePost;
+    const { location } = this.props;
 
     return (
       <div>
@@ -28,6 +32,12 @@ class SinglePost extends React.Component {
               <HtmlBox>{singlePost.content}</HtmlBox>
               <p>Author: {author} </p>
             </div>
+            <FacebookProvider appId="430799611158178">
+              <Comments href={`${BASE_URL}/${location.pathname}`} />
+              <ShareButton className= "button button--primary" href="http://www.facebook.com">
+                Share on facebook
+              </ShareButton>
+            </FacebookProvider>
           </div>
         }
         {!pending && error && <Alert variant="error">{error}</Alert>}
@@ -48,4 +58,4 @@ SinglePost.propTypes = {
   loadSinglePost: PropTypes.func.isRequired,
 };
 
-export default SinglePost; 
+export default withRouter(props => <SinglePost {...props}/>);
