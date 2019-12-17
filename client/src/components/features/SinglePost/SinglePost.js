@@ -16,6 +16,7 @@ class SinglePost extends React.Component {
   render() {
     const { singlePost } = this.props;
     const { pending, error, success} = this.props.request;
+    const { author } = this.props.singlePost;
 
     return (
       <div>
@@ -25,6 +26,7 @@ class SinglePost extends React.Component {
             <PageTitle>{singlePost.title}</PageTitle>
             <div className="post-content">
               <HtmlBox>{singlePost.content}</HtmlBox>
+              <p>Author: {author} </p>
             </div>
           </div>
         }
@@ -40,6 +42,7 @@ SinglePost.propTypes = {
     id: PropTypes.string,
     title: PropTypes.string,
     content: PropTypes.string,
+    author: PropTypes.string,
   }),
   request: PropTypes.object.isRequired,
   loadSinglePost: PropTypes.func.isRequired,
