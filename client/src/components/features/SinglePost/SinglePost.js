@@ -34,7 +34,7 @@ class SinglePost extends React.Component {
             </div>
             <FacebookProvider appId="430799611158178">
               <Comments href={`${BASE_URL}/${location.pathname}`} />
-              <ShareButton className= "button button--primary" href="http://www.facebook.com">
+              <ShareButton className= "button button--primary" href={`${BASE_URL}/${location.pathname}`}>
                 Share on facebook
               </ShareButton>
             </FacebookProvider>
