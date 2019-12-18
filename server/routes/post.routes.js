@@ -12,6 +12,9 @@ router.route('/posts/:id').get(PostController.getSinglePost);
 // add posts
 router.route('/posts').post(PostController.addPost);
 
+// edit posts
+router.route('/posts/:id').post(PostController.editPost);
+
 // get posts by range
 router.route('/posts/range/:startAt/:limit').get(PostController.getPostsByRange);
 

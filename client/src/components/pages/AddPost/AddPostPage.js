@@ -2,10 +2,10 @@ import React from 'react';
 import PageTitle from '../../common/PageTitle/PageTitle';
 import PostForm from '../../features/PostForm/PostFormContainer';
 
-const AddPostPage = () => (
+const AddPostPage = props => (
     <div>
       <PageTitle>Add post</PageTitle>
-      <PostForm />
+      <PostForm match={props.match}/>
     </div>
   );
   

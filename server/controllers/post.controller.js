@@ -40,7 +40,16 @@ exports.addPost = async function (req, res) {
   } catch(err) {
     res.status(500).json(err);
   }
-}
+};
+
+// edit post
+exports.editPost = async (req, res) => {
+  try {
+    res.status(200).json(await Post.update({ id: req.params.id }, req.body));
+  } catch (err) {
+    res.status(500).json(err);
+  }
+}; 
 
 // get posts by range
 exports.getPostsByRange = async function (req, res) {
