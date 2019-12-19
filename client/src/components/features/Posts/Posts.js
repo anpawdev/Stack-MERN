@@ -20,8 +20,8 @@ class Posts extends React.Component {
   }
 
   loadPostsPage = (page) => {
-    const { loadPostByPage } = this.props;
-    loadPostByPage(page);
+    const { loadPostByPage, postsPerPage } = this.props;
+    loadPostByPage(page, postsPerPage);
   }
 
   render() {
