@@ -29,11 +29,6 @@ class PostForm extends React.Component {
     if(match.params.id) this.setState({ post: singlePost });
   }
 
-  // componentDidMount() {
-  //   const { resetRequest } = this.props;
-  //   resetRequest();
-  // }
-
   handleChange = (e) => {
     const { post } = this.state;
     this.setState({ post: { ...post, [e.target.name]: e.target.value }})
@@ -55,13 +50,6 @@ class PostForm extends React.Component {
     }
     else addPost(post);
   }
-  // addPost = (e) => {
-  //   const { addPost } = this.props;
-  //   const { post } = this.state;
-
-  //   e.preventDefault();
-  //   addPost(post);
-  // }
 
   render() {
 
