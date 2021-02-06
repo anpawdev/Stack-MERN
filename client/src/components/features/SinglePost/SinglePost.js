@@ -1,7 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
-import { FacebookProvider, Comments, ShareButton } from 'react-facebook';
 import { withRouter } from 'react-router-dom';
+import { FacebookProvider, Comments, ShareButton} from 'react-facebook';
 import { BASE_URL } from '../../../config';
 
 import PageTitle from '../../common/PageTitle/PageTitle';
@@ -31,13 +31,13 @@ class SinglePost extends React.Component {
             <div className="post-content">
               <HtmlBox>{singlePost.content}</HtmlBox>
               <p>Author: {author} </p>
+              <FacebookProvider appId="448404779881485">
+                <Comments href={`${BASE_URL}/${location.pathname}`}/>
+                <ShareButton href="http://www.facebook.com">
+                  Share on facebook
+                </ShareButton>
+              </FacebookProvider>
             </div>
-            <FacebookProvider appId="430799611158178">
-              <Comments href={`${BASE_URL}/${location.pathname}`} />
-              <ShareButton className= "button button--primary" href={`${BASE_URL}/${location.pathname}`}>
-                Share on facebook
-              </ShareButton>
-            </FacebookProvider>
           </div>
         }
         {!pending && error && <Alert variant="error">{error}</Alert>}
