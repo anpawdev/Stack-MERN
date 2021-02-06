@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './PageContainer.scss';
 
 const PageContainer = ({ children }) => (
-  <div className="container-fluid">
+  <div className="container-fluid font-body text-black">
     {children}
   </div>
 );

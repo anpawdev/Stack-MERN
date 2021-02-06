@@ -1,9 +1,7 @@
 import React from 'react'
 
-import './Logo.scss';
-
 const Logo = ({ links, location }) => (
-  <h1 className="logo">Blog.app</h1>
+  <h1 className="m-4 p-3 text-xl text-black tracking-widest">Design</h1>
 );
 
 export default Logo;
