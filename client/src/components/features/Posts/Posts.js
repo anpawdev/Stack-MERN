@@ -6,42 +6,44 @@ import Alert from '../../common/Alert/Alert';
 import Pagination from '../../common/Pagination/Pagination';
 
 class Posts extends React.Component {
-
+  
   state = {
+    presentPage: this.props.initialPage || 1,
     initialPage: 1,
-    postsPerPage: this.props.postsPerPage || 10,
     pagination: this.props.pagination  === false ? false : true,
   }
 
   componentDidMount() {
-    const { loadPostByPage } = this.props;
-    const { initialPage, postsPerPage } = this.state;
+    const { loadPostByPage, initialPage, postsPerPage } = this.props;
     loadPostByPage(initialPage, postsPerPage);
   }
 
-  loadPostsPage = (page) => {
+  loadPostsPage = page => {
     const { loadPostByPage, postsPerPage } = this.props;
     loadPostByPage(page, postsPerPage);
+    this.setState({
+      presentPage: page
+    })
   }
 
   render() {
-    const { posts, pages } = this.props;
+    const { presentPage } = this.state
+    const { posts, pages, initialPage } = this.props;
     const { pending, error, success} = this.props.request;
     const { loadPostsPage } = this;
     const { pagination } = this.state;
 
     return (
-      <div>
-        {!pending && success && (posts.length > 0) && <PostsList posts={posts}/>}
-        <Pagination pages={pages} onPageChange={loadPostsPage} visible={pagination}/>
-        {(pending || !success) && <Spinner />}
-        {!pending && error && <Alert variant="error">{error}</Alert>}
-        {!pending && success && (posts.length === 0) && <Alert variant="info">No posts</Alert>}
-      </div>
+        <div>
+          {!pending && success && (posts.length > 0) && <PostsList posts={posts}/>}
+          {(pending || !success) && <Spinner />}
+          {!pending && error && <Alert variant="error">{error}</Alert>}
+          {!pending && success && (posts.length === 0) && <Alert variant="info">No posts</Alert>}
+          <Pagination visible={pagination} presentPage={presentPage} initialPage={initialPage} pages={pages} onPageChange={loadPostsPage}/>
+        </div>
     );
   }
-
-};
+}
 
 Posts.propTypes = {
   posts: PropTypes.arrayOf(
@@ -50,9 +52,10 @@ Posts.propTypes = {
       title: PropTypes.string.isRequired,
       content: PropTypes.string.isRequired,
       author: PropTypes.string.isRequired,
+      img: PropTypes.string.isRequired,
     })
   ),
-  loadPostsByPage: PropTypes.func.isRequired,
+  loadPostByPage: PropTypes.func.isRequired,
   request: PropTypes.object.isRequired,
   pagination: PropTypes.bool,
 };
