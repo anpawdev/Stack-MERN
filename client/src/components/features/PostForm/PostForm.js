@@ -10,8 +10,6 @@ import Button from '../../common/Button/Button';
 import Alert from '../../common/Alert/Alert';
 import Spinner from '../../common/Spinner/Spinner';
 
-import './PostForm.scss';
-
 class PostForm extends React.Component {
 
   state = {
@@ -80,7 +78,7 @@ class PostForm extends React.Component {
         <SectionTitle>Edit post content</SectionTitle>
 
         <Editor
-          className="content-editor"
+          className="content-editor p-10 mb-6 md:w-1/2 sm:w-full border"
           text={post.content}
           onChange={handleEditor}
           options={{ placeholder: false, toolbar: { buttons: ['bold', 'italic', 'underline', 'anchor', 'h2', 'h3'] } }}

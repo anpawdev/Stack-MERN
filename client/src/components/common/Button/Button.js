@@ -1,16 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
-import './Button.scss';
 
 const Button = ({ variant = '', children, ...otherProps }) => (
-  <button { ...otherProps } className={ `button button--${variant}`}>
+  <button { ...otherProps } className="inline-flex items-center h-10 p-5 transition-colors duration-150 border border-black rounded-sm focus:shadow-outline hover:bg-black hover:text-white">
     { children }
   </button>
 );
-
-Button.propTypes = {
-  variant: PropTypes.string.isRequired,
-};
 
 export default Button;

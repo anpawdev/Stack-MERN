@@ -9,4 +9,4 @@ const AddPostPage = props => (
     </div>
   );
   
-  export default AddPostPage;
+export default AddPostPage;
