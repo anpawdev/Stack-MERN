@@ -1,10 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './SectionTitle.scss';
-
 const SectionTitle = ({ children }) => (
-  <h2 className="section-title">
+  <h2 className="section-title mt-6 mb-4 py-2 text-black text-justify">
      {children}
   </h2>
 );

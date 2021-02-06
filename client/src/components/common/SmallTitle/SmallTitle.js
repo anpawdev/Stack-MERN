@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './SmallTitle.scss';
 
 const SmallTitle = ({ children, ...otherProps }) => (
-  <h2 {...otherProps} className="small-title">
+  <h2 {...otherProps} className="mt-6 mb-6 text-xl font-light text-black antialiased">
     { children }
   </h2>
 );

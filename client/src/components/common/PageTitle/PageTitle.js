@@ -1,10 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './PageTitle.scss';
-
 const PageTitle = ({ children }) => (
-  <h1 className="page-title">
+  <h1 className="text-5xl m-10 tracking-widest font-title text-black uppercase text-center">
      {children}
   </h1>
 );
