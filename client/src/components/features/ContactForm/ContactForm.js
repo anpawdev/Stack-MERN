@@ -54,7 +54,7 @@ const ContactForm = () => (
     </Formik>
     </div>
     <div className="w-full lg:w-1/2 text-center p-20">
-      <img src={ContactImage} alt="contact-image" />
+      <img src={ContactImage} alt="contact" />
     </div>
   </div>
 );

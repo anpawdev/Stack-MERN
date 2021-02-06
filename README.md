@@ -12,7 +12,8 @@ The application provides features of listing, adding and editing posts, as well 
 * React
 * Redux
 * React Router
-* NodeJS 
+* NodeJS
+* Tailwind css 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
