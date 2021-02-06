@@ -5,7 +5,7 @@ import PostSummary from '../PostSummary/PostSummary';
 
 const PostsList = ({ posts }) => (
   <div>
-    <section className="posts-list">
+    <section className="flex flex-wrap posts-list">
       {posts.map(post => <PostSummary key={post.id} {...post} />)}
     </section>
   </div>

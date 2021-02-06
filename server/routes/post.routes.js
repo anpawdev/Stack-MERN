@@ -15,6 +15,9 @@ router.route('/posts').post(PostController.addPost);
 // edit posts
 router.route('/posts/:id').post(PostController.editPost);
 
+// delete post
+router.route('/posts/:id').delete(PostController.deletePost);
+
 // get posts by range
 router.route('/posts/range/:startAt/:limit').get(PostController.getPostsByRange);
 

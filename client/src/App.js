@@ -3,29 +3,33 @@ import { Switch, Route } from 'react-router-dom';
 import MainLayout from './components/layout/MainLayout/MainLayout';
 import Home from './components/pages/Home/HomePage';
 import Posts from './components/pages/Posts/PostsPage';
+import About from './components/pages/About/AboutPage';
 import Contact from './components/pages/Contact/ContactPage';
 import NotFound from './components/pages/NotFound/NotFoundPage';
-import AddPost from './components/pages/AddPost/AddPostPage';
 import SinglePost from './components/pages/SinglePost/SinglePostPage';
-import EditPost from './components/pages/EditPost/EditPost';
+import AddPost from './components/pages/AddPost/AddPostPage';
+import EditPost from './components/pages/EditPost/EditPostPage';
+import DeletePost from './components/pages/DeletePost/DeletePostContainer';
 
 class App extends React.Component {
+
   render() {
     return (
       <MainLayout>
         <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/posts/new" exact component={AddPost} />
+          <Route path="/" exact component={Home}/>
+          <Route path="/posts/new" exact component={AddPost}/>
           <Route path="/posts/edit/:id" exact component={EditPost} />
-          <Route path="/posts/:id" exact component={SinglePost} />
-          <Route path="/posts" exact component={Posts} />
-          <Route path="/contact" exact component={Contact} />
-          <Route component={NotFound} />
+          <Route path="/posts/delete/:id" exact component={DeletePost} />
+          <Route path="/posts/:id" exact component={SinglePost}/>
+          <Route path="/posts" exact component={Posts}/>
+          <Route path="/about" exact component={About}/>
+          <Route path="/contact" exact component={Contact}/>
+          <Route component={NotFound}/>
         </Switch>
       </MainLayout>
     );
   }
-
-};
+}
 
 export default App;

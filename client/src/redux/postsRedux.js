@@ -27,6 +27,7 @@ const initialState = {
   postsPerPage: 9,
   presentPage: 1,
   initialPage: 1,
+  pagination: false
 };
 
 // action name creator
