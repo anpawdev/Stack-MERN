@@ -27,13 +27,13 @@ class Footer extends React.Component {
                     <Logo />
                     <MainMenu links={links} />
                     <div>
-                        <Link to={{ pathname: "http://facebook.com" }} target="_blank">
+                        <Link to={{ pathname: "http://facebook.com" }} target="_blank" className="px-2">
                             <FontAwesomeIcon icon={faFacebook}/>
                         </Link>
-                        <Link to={{ pathname: "http://twitter.com" }} target="_blank">
+                        <Link to={{ pathname: "http://twitter.com" }} target="_blank" className="px-2">
                             <FontAwesomeIcon icon={faTwitter}/>
                         </Link>
-                        <Link to={{ pathname: "http://instagram.com" }} target="_blank">
+                        <Link to={{ pathname: "http://instagram.com" }} target="_blank" className="px-2">
                             <FontAwesomeIcon icon={faInstagram}/>
                         </Link>  
                     </div>

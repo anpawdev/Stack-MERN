@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './Pagination.scss';
-
 class Pagination extends React.Component {
   
   state = {
@@ -19,18 +17,18 @@ class Pagination extends React.Component {
   render() {
     const { pages } = this.props;
     const { presentPage, visible } = this.state;
-    const prevButton = <li className="pagination__list__item" onClick={() => this.changePage(presentPage - 1)}>&lt;</li>
-    const nextButton = <li className="pagination__list__item" onClick={() => this.changePage(presentPage + 1)}>&gt;</li>
+    const prevButton = <li className="flex justify-center items-center cursor-pointer m-4" onClick={() => this.changePage(presentPage - 1)}>&laquo;</li>
+    const nextButton = <li className="flex justify-center items-center cursor-pointer m-4" onClick={() => this.changePage(presentPage + 1)}>&raquo;</li>
    
       return (
-        <div className="pagination">
-         {visible &&  <ul className="pagination__list"> 
+        <div className="mx-auto text-center">
+         {visible &&  <ul className="flex justify-center list-none text-xl"> 
             {(presentPage > 1) ? prevButton : ''}
               {[...Array(pages)].map((el, page) => (
             <li
               key={++page}
               onClick={() => this.changePage(page)}
-              className={`pagination__list__item${page === presentPage ? ' pagination__list__item--active' : ''}`}
+              className={`flex justify-center items-center cursor-pointer m-4${page === presentPage ? 'flex justify-center items-center cursor-pointer m-4 text-blue-500' : ''}`}
             >
               {page}
             </li>

@@ -1,10 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './PageContainer.scss';
-
 const PageContainer = ({ children }) => (
-  <div className="container-fluid font-body text-black">
+  <div className="max-w-screen-xl mx-auto w-full font-body text-black">
     {children}
   </div>
 );

@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../../features/Header/Header';
 import HomePageSection from '../../features/HomePageSection/HomePageSection';
 import Posts from '../../features/Posts/PostsContainer';
+import Instagram from '../../features/InstagramSection/InstagramSection';
 import Subscribe from '../../features/Subscribe/Subscribe';
 import SectionTitle from '../../common/SectionTitle/SectionTitle';
 import { Link } from 'react-router-dom';
@@ -15,6 +16,7 @@ const HomePage = () => (
     <div className="text-xs text-center bg-section-500 w-full p-6 mt-4 uppercase">
       <Link to="/posts" >Load more posts &raquo;</Link>
     </div>
+    <Instagram />
     <Subscribe />
   </div>
 );
