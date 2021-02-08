@@ -22,8 +22,8 @@ module.exports = {
               },
         },
         height: {
-          header: '40vh',
-          section: '10vh',
+          header: '20vh',
+          section: '15vh',
         },
         width: {
           '1/3': '31.666667%',

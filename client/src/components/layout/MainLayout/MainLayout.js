@@ -4,7 +4,7 @@ import NavBar from '../../features/NavBar/NavBar';
 import Footer from '../../features/Footer/Footer';
 
 const MainLayout = ({ children }) => (
-  <div>
+  <div className="text-center">
     <PageContainer>
       <NavBar />
       {children}

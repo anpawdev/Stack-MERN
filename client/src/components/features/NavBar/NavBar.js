@@ -17,8 +17,8 @@ function Navbar({ fixed }) {
     
   return (
       <nav className="w-full mx-auto mt-0 py-2 border-b border-gray-300">
-        <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
-          <div className="w-full flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+        <div className="px-4 mx-auto flex flex-wrap items-center justify-between">
+          <div className="w-full flex justify-between lg:w-auto md:justify-center lg:static lg:block lg:justify-start">
             <Logo />
             <button className="cursor-pointer md:hidden block m-4 p-3"
             type="button"
@@ -28,7 +28,7 @@ function Navbar({ fixed }) {
                 </svg>
             </button>
           </div>
-          <div className={"flex flex-col items-center lg:flex-row md:flex-row flex-grow flex-wrap md:flex md:items-center md:w-auto mx-auto font-medium text-sm uppercase" +
+          <div className={"flex flex-col items-center lg:flex-row md:flex-row flex-grow flex-wrap md:flex md:justify-center md:items-center md:w-auto mx-auto font-medium text-sm uppercase" +
               (isOpen ? " flex" : " hidden")
             }
           >

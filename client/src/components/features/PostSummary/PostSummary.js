@@ -9,8 +9,8 @@ import cutText from '../../../utils/CutText';
 import UserLogin from '../../../images/default-user-image.png';
 
 const PostSummary = ({ id, title, content, author }) => (
-   <article className="flex flex-wrap w-full mx-auto md:w-1/2 lg:w-1/3 p-6 mt-8 border text-sm">
-      <div className="flex flex-col items-stretch min-h-full pb-4">
+   <article className="flex flex-wrap justify-center items-center w-full mx-auto md:w-1/2 lg:w-1/3 p-6 mt-8 border text-sm">
+      <div className="flex flex-col items-stretch min-h-full p-4">
         <div className="flex flex-wrap items-center flex-1 px-2 py-1 mx-auto text-justify">
           <SmallTitle>{title}</SmallTitle>
           <HtmlBox>{cutText(content, 200)}</HtmlBox>
@@ -36,7 +36,7 @@ const PostSummary = ({ id, title, content, author }) => (
             </Button>
           </Link>
           <Link to={`posts/delete/${id}`}>
-            <svg className="w-4 h-4 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-4 h-4 ml-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
             </svg>            
           </Link>

@@ -23,7 +23,7 @@ class Footer extends React.Component {
 
         return(
             <nav className="navbar h-section mx-auto mt-14 mb-12 font-medium text-sm text-center">
-                <div className="flex flex-wrap justify-between items-center uppercase">
+                <div className="flex flex-col items-center xl:text-left lg:flex-row md:flex-row flex-grow flex-wrap md:flex md:justify-center md:items-center md:w-auto mx-auto font-medium text-sm uppercase">
                     <Logo />
                     <MainMenu links={links} />
                     <div>

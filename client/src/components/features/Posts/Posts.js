@@ -52,7 +52,6 @@ Posts.propTypes = {
       title: PropTypes.string.isRequired,
       content: PropTypes.string.isRequired,
       author: PropTypes.string.isRequired,
-      img: PropTypes.string.isRequired,
     })
   ),
   loadPostByPage: PropTypes.func.isRequired,
