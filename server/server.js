@@ -8,6 +8,7 @@ const sanitize = require('mongo-sanitize');
 const path = require('path');
 
 const app = express();
+const url = process.env.MONGODB_URL;
 
 // import routes
 const postRoutes = require('./routes/post.routes');
@@ -26,7 +27,7 @@ app.get('*', (req, res) => {
 });
 
 // connects our back end code with the database
-mongoose.connect(config.MONGODB_URL, { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URL || config.MONGODB_URL, { useNewUrlParser: true });
 let db = mongoose.connection;
 
 db.once('open', () => {
