@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "install": "cd client && npm run build",
+    "heroku-prebuild": "npm install",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": "git@github.com:AnnaPawlik/Stack-MERN.git",
   "author": "Ania",
