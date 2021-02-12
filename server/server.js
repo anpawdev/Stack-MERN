@@ -8,7 +8,6 @@ const sanitize = require('mongo-sanitize');
 const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 8000;
 
 // import routes
 const postRoutes = require('./routes/post.routes');
@@ -27,7 +26,7 @@ app.get('*', (req, res) => {
 });
 
 // connects our back end code with the database
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/blogappmern', { useNewUrlParser: true });
+mongoose.connect(config.MONGODB_URI, { useNewUrlParser: true });
 let db = mongoose.connection;
 
 db.once('open', () => {
@@ -36,6 +35,6 @@ db.once('open', () => {
 });
 db.on('error', (err) => console.log('Error ' + err));
 
-app.listen(PORT, function() {
-  console.log('Server is running on Port:', PORT);
+app.listen(config.PORT, function() {
+  console.log('Server is running on Port:', config.PORT);
 });
