@@ -2,8 +2,6 @@
 
 Full-stack Web App for blogging based on the MERN stack. 
 
-The project was deployed on Heroku and is available at https://blogappmern.herokuapp.com/.
-
 The application provides features of listing, adding and editing posts, as well as displaying single post. The app is integrated with Facebook, which allows commenting and sharing posts on Facebook.
 
 ## Technology
@@ -24,7 +22,7 @@ In the project directory, you can run:
 ### `yarn start`
 
 Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
